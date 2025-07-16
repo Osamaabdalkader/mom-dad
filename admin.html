@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - تسريع</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h2 class="page-title">لوحة تحكم الإدارة</h2>
+            <button class="close-btn" onclick="window.location.href='index.html'">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="admin-tabs">
+            <button class="tab-btn active" data-tab="orders">الطلبات</button>
+            <button class="tab-btn" data-tab="notifications">الإشعارات</button>
+            <button class="tab-btn" data-tab="transfers">التحويلات</button>
+        </div>
+        
+        <div id="admin-orders" class="admin-section">
+            <div class="section-header">
+                <h3>إدارة الطلبات</h3>
+                <div class="orders-filter">
+                    <select id="orders-filter">
+                        <option value="all">جميع الطلبات</option>
+                        <option value="قيد المراجعة">قيد المراجعة</option>
+                        <option value="تم التأكيد">تم التأكيد</option>
+                        <option value="تم الشحن">تم الشحن</option>
+                        <option value="مكتمل">مكتمل</option>
+                        <option value="ملغي">ملغي</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="orders-list" class="orders-list">
+                <!-- الطلبات ستظهر هنا -->
+            </div>
+        </div>
+        
+        <div id="admin-notifications" class="admin-section hidden">
+            <div class="section-header">
+                <h3>الإشعارات</h3>
+                <button id="clear-notifications" class="btn">حذف الكل</button>
+            </div>
+            
+            <div id="notifications-list" class="notifications-list">
+                <!-- الإشعارات ستظهر هنا -->
+            </div>
+        </div>
+        
+        <div id="admin-transfers" class="admin-section hidden">
+            <div class="section-header">
+                <h3>التحويلات المالية</h3>
+            </div>
+            
+            <div class="transfer-form">
+                <div class="form-group">
+                    <label for="transfer-account">رقم حساب البائع</label>
+                    <input type="text" id="transfer-account" placeholder="مثال: 9874347954">
+                </div>
+                
+                <div class="form-group">
+                    <label for="transfer-amount">المبلغ (ريال)</label>
+                    <input type="number" id="transfer-amount" placeholder="المبلغ المراد تحويله">
+                </div>
+                
+                <div class="form-group">
+                    <label for="transfer-reference">مرجع الطلب</label>
+                    <input type="text" id="transfer-reference" placeholder="رقم الطلب أو المرجع">
+                </div>
+                
+                <button id="record-transfer-btn" class="btn">تسجيل التحويل</button>
+            </div>
+            
+            <div class="transfers-history">
+                <h4>سجل التحويلات</h4>
+                <div id="transfers-list" class="transfers-list">
+                    <!-- سجل التحويلات سيظهر هنا -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

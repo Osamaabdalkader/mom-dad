@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إتمام الشراء - تسريع</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <button class="close-btn" onclick="window.location.href='post-details.html'">
+                <i class="fas fa-times"></i>
+            </button>
+            <h2 class="page-title">إتمام عملية الشراء</h2>
+        </div>
+        
+        <div class="payment-container">
+            <div class="payment-steps">
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <div class="step-title">تأكيد الشراء</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-title">إيداع المبلغ</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-title">التواصل مع البائع</div>
+                </div>
+            </div>
+            
+            <div class="payment-content">
+                <div class="payment-info">
+                    <h3>تفاصيل المنتج:</h3>
+                    <div class="product-summary">
+                        <img id="payment-product-img" src="#" alt="صورة المنتج">
+                        <div>
+                            <h4 id="payment-product-title"></h4>
+                            <p id="payment-product-price"></p>
+                        </div>
+                    </div>
+                    
+                    <h3>طريقة الدفع الآمنة:</h3>
+                    <div class="secure-payment">
+                        <div class="secure-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <p>نظام الدفع المضمون يحمي مشترياتك ويضمن استلام المنتج كما هو موصوف</p>
+                    </div>
+                    
+                    <div class="payment-instructions">
+                        <h3>تعليمات الدفع:</h3>
+                        <ol>
+                            <li>قم بإيداع المبلغ في الحساب البنكي التالي:</li>
+                            <li class="bank-account">
+                                <i class="fas fa-university"></i>
+                                البنك: الكريمي
+                                <br>
+                                <i class="fas fa-credit-card"></i>
+                                رقم الحساب: 2433467899986
+                                <br>
+                                <i class="fas fa-user"></i>
+                                اسم الحساب: تسريع للدفع الآمن
+                            </li>
+                            <li>أرسل اسم الحساب المرسل ورقم العملية عبر هذا النموذج</li>
+                            <li>سنتواصل مع البائع بعد تأكيد الإيداع</li>
+                            <li>ستحصل على المنتج خلال 24-48 ساعة</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="payment-form">
+                    <h3>تأكيد عملية الشراء</h3>
+                    
+                    <div class="form-group">
+                        <label for="buyer-name">اسمك الكامل</label>
+                        <input type="text" id="buyer-name" placeholder="ادخل اسمك الكامل">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="buyer-phone">رقم هاتفك</label>
+                        <input type="tel" id="buyer-phone" placeholder="ادخل رقم هاتفك">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sender-name">اسم الحساب المرسل (كما في البنك)</label>
+                        <input type="text" id="sender-name" placeholder="اسم الحساب كما هو مسجل في البنك">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="transaction-id">رقم العملية البنكية</label>
+                        <input type="text" id="transaction-id" placeholder="ادخل رقم العملية البنكية">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="seller-account">رقم حساب البائع في بنك الكريمي</label>
+                        <input type="text" id="seller-account" readonly>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="buyer-address">عنوان التسليم</label>
+                        <textarea id="buyer-address" rows="3" placeholder="ادخل عنوان التسليم بالتفصيل"></textarea>
+                    </div>
+                    
+                    <div class="form-check">
+                        <input type="checkbox" id="agree-terms">
+                        <label for="agree-terms">أوافق على شروط الاستخدام وسياسة الخصوصية</label>
+                    </div>
+                    
+                    <button id="confirm-payment-btn" class="btn">
+                        <i class="fas fa-check-circle"></i> تأكيد الشراء
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

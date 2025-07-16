@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة منشور - تسريع</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h2 class="page-title">إنشاء منشور جديد</h2>
+            <button class="close-btn" onclick="window.location.href='index.html'">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div id="add-post-form">
+            <div class="form-group">
+                <label for="post-title">عنوان المنشور</label>
+                <input type="text" id="post-title" placeholder="أدخل عنواناً جذاباً">
+            </div>
+            <div class="form-group">
+                <label for="post-description">الوصف</label>
+                <textarea id="post-description" rows="4" placeholder="صف منشورك بالتفصيل"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="post-price">السعر (اختياري)</label>
+                <input type="text" id="post-price" placeholder="مثال: 100 ريال">
+            </div>
+            <div class="form-group">
+                <label for="post-location">الموقع</label>
+                <input type="text" id="post-location" placeholder="أدخل موقعك">
+            </div>
+            <div class="form-group">
+                <label for="post-phone">رقم الهاتف</label>
+                <input type="tel" id="post-phone" placeholder="رقم للتواصل">
+            </div>
+            <div class="form-group">
+                <label for="post-image">صورة المنشور</label>
+                <div class="image-upload-container">
+                    <input type="file" id="post-image" accept="image/*" hidden>
+                    <button type="button" id="choose-image-btn" class="btn-outline">
+                        <i class="fas fa-image"></i> اختر صورة
+                    </button>
+                    <span id="image-name">لم يتم اختيار صورة</span>
+                    <button type="button" id="camera-btn" class="btn-outline">
+                        <i class="fas fa-camera"></i> الكاميرا
+                    </button>
+                </div>
+                <div id="image-preview" class="image-preview hidden">
+                    <img id="preview-img" src="#" alt="معاينة الصورة">
+                    <button type="button" id="remove-image-btn" class="btn-remove">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <button id="publish-btn" class="btn">نشر الآن</button>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-storage-compat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
