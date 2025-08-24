@@ -1,4 +1,4 @@
-// تهيئة Firebase
+index.htmlxxهيئة Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyAzYZMxqNmnLMGYnCyiJYPg2MbxZMt0co0",
     authDomain: "osama-91b95.firebaseapp.com",
@@ -57,14 +57,14 @@ function initHomePage() {
     document.getElementById('add-post-icon').addEventListener('click', () => {
         const user = auth.currentUser;
         if (user) {
-            window.location.href = 'add-post.html';
+            window.location.href = 'payment.html';
         } else {
             window.location.href = 'auth.html';
         }
     });
     
     document.getElementById('home-icon').addEventListener('click', () => {
-        window.location.href = 'index.html';
+        window.location.href ='admin.html';
     });
 }
 
